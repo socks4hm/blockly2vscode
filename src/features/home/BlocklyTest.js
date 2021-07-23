@@ -15,8 +15,8 @@ export default function BlocklyTest() {
     initialXml: ConfigFiles.INITIAL_XML,
   });
   return (
-    <div className="home-blockly-test">
-      <div ref={blocklyRef} />
+    <div className="home-blockly-test fit vertical layout">
+      <div className="flex" ref={blocklyRef} />
     </div>
   );
 }
