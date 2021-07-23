@@ -103,10 +103,10 @@ Blockly.Blocks['urb_component'] = {
 
 Blockly.Blocks['urb_floating_button'] = {
   init: function() {
-    this.appendValueInput('NAME')
+    this.appendValueInput('children')
       .setCheck(null)
       .appendField('Floating button');
-    this.appendStatementInput('ON_CLICK')
+    this.appendStatementInput('onClick')
       .setCheck(null)
       .appendField('onClick');
     this.setOutput(true, null);
@@ -121,7 +121,7 @@ Blockly.Blocks['urb_list'] = {
     this.appendValueInput('children')
       .setCheck(null)
       .appendField('list listen')
-      .appendField(new Blockly.FieldCheckbox('TRUE'), 'NAME');
+      .appendField(new Blockly.FieldCheckbox('TRUE'), 'listen');
     this.appendStatementInput('onRowClick')
       .setCheck(null)
       .appendField('onRowClick');
@@ -134,7 +134,7 @@ Blockly.Blocks['urb_list'] = {
 
 Blockly.Blocks['urb_add'] = {
   init: function() {
-    this.appendValueInput('CHILDREN')
+    this.appendValueInput('children')
       .setCheck(null)
       .appendField('add');
     this.setOutput(true, null);

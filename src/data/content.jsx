@@ -12,10 +12,11 @@ const INITIAL_TOOLBOX_JSON = {
           kind: 'block',
           type: 'menus_function',
         },
-        // {
-        //   kind: 'block',
-        //   type: 'fields_field',
-        // },
+        {
+          kind: 'block',
+          blockxml:
+            '<block type="menus_function" id="`nkgkGJF%2OYe)ofN47A" x="16" y="8"><field name="function_name">myFunction</field><statement name="fields"><block type="menu_init_field" id="=4:G_Y{R3Wir8eZknUU}"><field name="field"></field><field name="type">string</field><field name="headerName"></field><field name="addLabel"></field><field name="width">0</field><next><block type="menu_init_field" id="(-Jm),2`cR!mEwk*pn59"><field name="field"></field><field name="type">string</field><field name="headerName"></field><field name="addLabel"></field><field name="width">0</field></block></next></block></statement><statement name="menus"><block type="menu" id="!GLD90.;/rDb%V)=`2A4"><field name="NAME"></field><field name="PRIMARY">TRUE</field><field name="POSITION">LEFT</field><field name="TITLE"></field><statement name="CHILDREN"><block type="urb_component" id="b$L=Vd1!Q6r/#=s#!3H]"></block></statement><next><block type="menu" id="g-{|b}t*q47UHt2*yp,y"><field name="NAME"></field><field name="PRIMARY">TRUE</field><field name="POSITION">LEFT</field><field name="TITLE"></field><statement name="CHILDREN"><block type="urb_component" id="x^7Mr(t?NX!DD0sG5TD!"></block></statement><next><block type="menu" id=":eaTGlN9@b+uXMB6/;Mo"><field name="NAME"></field><field name="PRIMARY">TRUE</field><field name="POSITION">LEFT</field><field name="TITLE"></field><statement name="CHILDREN"><block type="urb_component" id="Yp%;Y}L1ZZ%O)zIb|^XK"></block></statement></block></next></block></next></block></statement></block>',
+        },
         {
           kind: 'block',
           type: 'menu_init_field',

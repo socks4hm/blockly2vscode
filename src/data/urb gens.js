@@ -88,18 +88,24 @@ Blockly.JavaScript['icon'] = function(block) {
 };
 
 Blockly.JavaScript['urb_floating_button'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_on_click = Blockly.JavaScript.statementToCode(block, 'ON_CLICK');
+  var value_children = Blockly.JavaScript.valueToCode(
+    block,
+    'children',
+    Blockly.JavaScript.ORDER_ATOMIC,
+  );
+  var statements_on_click = Blockly.JavaScript.statementToCode(block, 'onClick');
   // TODO: Assemble JavaScript into code variable.
   var code = `<UrbFloatingButton 
-    ${statements_on_click.length > 0 ? "onClick={() => " + statements_on_click + "}":""}
-  >`;
+    ${statements_on_click.length > 0 ? 'onClick={(item) => ' + statements_on_click + '}' : ''}
+  >
+    ${value_children ? value_children : ''}
+  </UrbFloatingButton>\n`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['urb_list'] = function(block) {
-  var checkbox_name = block.getFieldValue('NAME') == 'TRUE';
+  var checkbox_listen = block.getFieldValue('listen') == 'TRUE';
   var value_children = Blockly.JavaScript.valueToCode(
     block,
     'children',
@@ -107,21 +113,23 @@ Blockly.JavaScript['urb_list'] = function(block) {
   );
   var statements_onrowclick = Blockly.JavaScript.statementToCode(block, 'onRowClick');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = `  <UrbList ${checkbox_listen ? 'listen ' : ''} {...state}
+      ${statements_onrowclick ? 'onRowClick={(item) => {\n' + statements_onrowclick + '}}' : ''}
+  >${value_children ? '\n     ' + value_children : ''}</UrbList>\n`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['urb_add'] = function(block) {
   var value_children = Blockly.JavaScript.valueToCode(
     block,
-    'CHILDREN',
+    'children',
     Blockly.JavaScript.ORDER_ATOMIC,
   );
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = `<UrbAdd {...state}/>\n`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['menu_init'] = function(block) {
@@ -135,7 +143,7 @@ Blockly.JavaScript['setstate'] = function(block) {
   var text_field = block.getFieldValue('field');
   var text_value = block.getFieldValue('value');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = `setState({ ${text_field}: "${text_value}"})\n`;
   return code;
 };
 
@@ -146,7 +154,6 @@ Blockly.JavaScript['urb_set'] = function(block) {
     Blockly.JavaScript.ORDER_ATOMIC,
   );
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  var code = `<UrbSet {...state}>${value_children ? '\n' + value_children + '\n' : ''}</UrbSet>`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
