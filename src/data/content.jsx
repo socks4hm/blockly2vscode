@@ -6,6 +6,25 @@ const INITIAL_TOOLBOX_JSON = {
   contents: [
     {
       kind: 'category',
+      name: 'urb',
+      colour: 210,
+      contents: [
+        {
+          kind: 'block',
+          type: 'icon',
+        },
+        {
+          kind: 'block',
+          type: 'menu',
+        },
+        {
+          kind: 'block',
+          blockxml: '<block type="logic_compare"><field name="OP">EQ</field></block>',
+        },
+      ],
+    },
+    {
+      kind: 'category',
       name: 'Logic',
       colour: 210,
       contents: [
