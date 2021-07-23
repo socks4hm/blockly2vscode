@@ -1,10 +1,26 @@
 import Blockly from 'blockly';
 
+Blockly.Blocks['go_to_menu'] = {
+  init: function() {
+    this.appendDummyInput()
+      .appendField('go to menu')
+      .appendField(new Blockly.FieldTextInput(''), 'menu_name');
+    this.setPreviousStatement(true, 'code');
+    this.setNextStatement(true, 'code');
+    this.setColour(60);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
 Blockly.Blocks['urb_set'] = {
   init: function() {
     this.appendValueInput('children')
       .setCheck(null)
       .appendField('set');
+    this.appendStatementInput('onFinished')
+      .setCheck('code')
+      .appendField('onFinished');
     this.setOutput(true, null);
     this.setColour(230);
     this.setTooltip('');
@@ -36,9 +52,9 @@ Blockly.Blocks['setstate'] = {
       .appendField(new Blockly.FieldTextInput(''), 'field')
       .appendField(':')
       .appendField(new Blockly.FieldTextInput(''), 'value');
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setPreviousStatement(true, 'code');
+    this.setNextStatement(true, 'code');
+    this.setColour(60);
     this.setTooltip('');
     this.setHelpUrl('');
   },
@@ -79,9 +95,8 @@ Blockly.Blocks['menu'] = {
 
 Blockly.Blocks['urb_component'] = {
   init: function() {
-    this.appendValueInput('COMPONENT')
-      .setCheck('component')
-      .appendField('component');
+    this.appendValueInput('COMPONENT').setCheck('component');
+    // .appendField('component');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -126,6 +141,9 @@ Blockly.Blocks['urb_add'] = {
     this.appendValueInput('children')
       .setCheck(null)
       .appendField('add');
+    this.appendStatementInput('onFinished')
+      .setCheck('code')
+      .appendField('onFinished');
     this.setOutput(true, null);
     this.setColour(230);
     this.setTooltip('');

@@ -139,6 +139,13 @@ Blockly.JavaScript['setstate'] = function(block) {
   return code;
 };
 
+Blockly.JavaScript['go_to_menu'] = function(block) {
+  var text_menu_name = block.getFieldValue('menu_name');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `setState({ activeMenu: "${text_menu_name}"})\n`;
+  return code;
+};
+
 Blockly.JavaScript['urb_set'] = function(block) {
   var value_children = Blockly.JavaScript.valueToCode(
     block,

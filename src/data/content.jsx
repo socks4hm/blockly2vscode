@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 const INITIAL_XML = '<xml xmlns="http://www.w3.org/1999/xhtml"></xml>';
 
 const INITIAL_TOOLBOX_JSON = {
@@ -15,7 +16,7 @@ const INITIAL_TOOLBOX_JSON = {
         {
           kind: 'block',
           blockxml:
-            '<block type="menus_function" id="bF8HTiuCaG.JGk#BA?7z" x="66" y="32"><field name="function_name">myFunction</field><statement name="fields"><block type="menu_init_field" id="^qPZ@j:X$AF8RB]CdQBu"><field name="field"></field><field name="type">string</field><field name="headerName"></field><field name="addLabel"></field><field name="width">0</field><next><block type="menu_init_field" id=")L!J8hD!kjCK=@:,jKnU"><field name="field"></field><field name="type">string</field><field name="headerName"></field><field name="addLabel"></field><field name="width">0</field></block></next></block></statement><statement name="menus"><block type="urb_component" id="KwHMNQNbvUCcP0!1WPi1"><value name="COMPONENT"><block type="urb_floating_button" id="M#C54^?J10RBk,}vTfE^"><value name="children"><block type="urb_list" id="in]0w2YB{rg+4/6o6)L*"><field name="listen">TRUE</field><statement name="onRowClick"><block type="setstate" id="~Wd)T,r55ty)5P|n2b28"><field name="field">activeMenu</field><field name="value">edit todo</field></block></statement></block></value><statement name="onClick"><block type="setstate" id="atXjG]t=MqO=U3DBSAam"><field name="field">activeMenu</field><field name="value">add todo</field></block></statement></block></value><next><block type="urb_component" id="[nIk,hhGA+zDI{G6Qprg"><value name="COMPONENT"><block type="urb_add" id="19i(t,:.Z`dLw{Oz+-*:"></block></value><next><block type="urb_component" id="%(n8@q-99T$Nbvo[:wc/"><value name="COMPONENT"><block type="urb_set" id="J4h|[%HM+`.iU_|bY%cx"></block></value></block></next></block></next></block></statement></block>',
+            '<block type="menus_function" id="W`(0jR.%!GCx3nNT.Znl" x="92" y="55"><field name="function_name">toDoMenus</field><statement name="fields"><block type="menu_init_field" id="mE0aV,J5LhnL|11A(036"><field name="field">to do</field><field name="type">string</field><field name="headerName">To Do</field><field name="addLabel">To Do</field><field name="width">300</field><next><block type="menu_init_field" id="?ai6D+y/(iG=tO`f1^=;"><field name="field">completed</field><field name="type">boolean</field><field name="headerName">Completed</field><field name="addLabel">Completed</field><field name="width">100</field></block></next></block></statement><statement name="menus"><block type="menu" id="M@;%no|S^G!_dS01}QC1"><field name="NAME">main</field><field name="TITLE">Things To Do!!</field><statement name="CHILDREN"><block type="urb_component" id="g~${_oN2k#S4Vb#z$)7Z"><value name="COMPONENT"><block type="urb_floating_button" id="yrz1ePrhv-PX5a#O|bU^"><value name="children"><block type="urb_list" id="u0iHhirP9X+0+{[yiU~M"><field name="listen">TRUE</field><statement name="onRowClick"><block type="go_to_menu" id="DDnCAd-UD:JSymHMG_,B"><field name="menu_name">edit</field></block></statement></block></value><statement name="onClick"><block type="setstate" id="Af8IKA)z3hEZ?|4uRCCM"><field name="field">activeMenu</field><field name="value">add</field></block></statement></block></value></block></statement><next><block type="menu" id="8[rT4t##f6?(:PdumUjE"><field name="NAME">add</field><field name="TITLE">Add a To Do</field><statement name="CHILDREN"><block type="urb_component" id="/c}SK%5R@@dy~ND/,6i%"><value name="COMPONENT"><block type="urb_add" id="_mC@zz+=XvY+n46P,nbN"><statement name="onFinished"><block type="go_to_menu" id="+aC345x!,?wPCID92+-h"><field name="menu_name">main</field></block></statement></block></value></block></statement><next><block type="menu" id="g](k4zeR#D~f|0a!Iy!h"><field name="NAME">edit</field><field name="TITLE">Edit To Do</field><statement name="CHILDREN"><block type="urb_component" id="OVLl.|4x0Xr9l5u+W=M3"><value name="COMPONENT"><block type="urb_set" id="X:,G^uw1-]ZpAFwzCQd,"><statement name="onFinished"><block type="go_to_menu" id="[=XbUSxs(_|!#N_S70Hu"><field name="menu_name">main</field></block></statement></block></value></block></statement></block></next></block></next></block></statement></block>',
         },
         {
           kind: 'block',
@@ -49,10 +50,13 @@ const INITIAL_TOOLBOX_JSON = {
           kind: 'block',
           type: 'urb_set',
         },
-
         {
           kind: 'block',
           type: 'setstate',
+        },
+        {
+          kind: 'block',
+          type: 'go_to_menu',
         },
       ],
     },
