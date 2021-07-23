@@ -13,6 +13,7 @@ export default function BlocklyTest() {
     ConfigFiles.INITIAL_TOOLBOX_JSON,
   );
   const [code, setCode] = useState(null);
+  const [workspaceXML, setworkspaceXML] = useState(null);
 
   const { workspace, xml } = useBlocklyWorkspace({
     ref: blocklyRef,
@@ -23,6 +24,8 @@ export default function BlocklyTest() {
 
   function handleWorkspaceChange(data) {
     setCode(Blockly.JavaScript.workspaceToCode(workspace));
+    var xml = Blockly.Xml.workspaceToDom(workspace);
+    setworkspaceXML(Blockly.Xml.domToText(xml));
   }
 
   // eslint-disable-next-line no-undef
@@ -32,7 +35,12 @@ export default function BlocklyTest() {
       <div>blockly test</div>
       <div className="flex" ref={blocklyRef} />
       <div className="horizontal layout" style={{ height: '20%' }}>
-        <div id="code">{code}</div>
+        <div id="code" className="flex">
+          {code}
+        </div>
+        <div id="xml" className="flex">
+          {workspaceXML}
+        </div>
       </div>
     </div>
   );

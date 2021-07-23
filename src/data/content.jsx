@@ -1,5 +1,4 @@
-const INITIAL_XML =
-  '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
+const INITIAL_XML = '<xml xmlns="http://www.w3.org/1999/xhtml"></xml>';
 
 const INITIAL_TOOLBOX_JSON = {
   kind: 'categoryToolbox',
@@ -11,15 +10,52 @@ const INITIAL_TOOLBOX_JSON = {
       contents: [
         {
           kind: 'block',
-          type: 'icon',
+          blockxml:
+            '<block type="menu_init" id="/g0|RBEsYAZF6%vD*-zA" x="56" y="37"><statement name="FIELDS"><block type="menu_init_field" id="8GKH~=D#Q9*eI/os^qZF"><field name="field">to do</field><field name="type">string</field><field name="headerName">To do</field><field name="addLabel">To do item</field><field name="width">90</field><next><block type="menu_init_field" id="/zFJ8)A8Z}[`bHAjg#EC"><field name="field">completed</field><field name="type">boolean</field><field name="headerName">Completed</field><field name="addLabel">Completed</field><field name="width">0</field><next><block type="menu_init_field" id="F9d(AOjT*=8pw.v?a*aj" disabled="true"><field name="field"></field><field name="type">string</field><field name="headerName"></field><field name="addLabel"></field><field name="width">0</field><next><block type="menu_init_field" id="!Zt3Z+s}7sQ:PV%G2Y.{" disabled="true"><field name="field"></field><field name="type">string</field><field name="headerName"></field><field name="addLabel"></field><field name="width">0</field></block></next></block></next></block></next></block></statement></block>',
+        },   {
+          kind: 'block',
+          blockxml:
+            '<block type="menu" id="Dfgm#^@AWU!kgiMW3g2r" x="23" y="48"><field name="NAME">main</field><field name="PRIMARY">TRUE</field><field name="POSITION">LEFT</field><field name="TITLE">To Do\'s</field><statement name="CHILDREN"><block type="menu_item" id="w18_QG7Qdh;:BUA1/nb("><value name="COMPONENT"><block type="urb_floating_button" id="wg-W]w,+G^p-=UiI$#9u"><value name="NAME"><block type="urb_list" id="/_3C1kbb?!xL1|{TmjrQ"><field name="NAME">TRUE</field><statement name="onRowClick"><block type="setstate" id="oW.(Eov,ZKGGP,M@9J4}"><field name="field">activeMenu</field><field name="value">add todo</field><next><block type="setstate" id="E$|GQ;c}t|-BA]:Z54~@"><field name="field">$key</field><field name="value">item.$key</field></block></next></block></statement></block></value><statement name="ON_CLICK"><block type="setstate" id="bYGpM{:{!q!;RCk:kPMO"><field name="field">activeMenu</field><field name="value">add todo</field></block></statement></block></value></block></statement></block>',
         },
+        // {
+        //   kind: 'block',
+        //   type: 'menu_init',
+        // },
+        // {
+        //   kind: 'block',
+        //   type: 'menu_init_field',
+        // },
+        // {
+        //   kind: 'block',
+        //   type: 'icon',
+        // },
         {
           kind: 'block',
           type: 'menu',
         },
         {
           kind: 'block',
-          blockxml: '<block type="logic_compare"><field name="OP">EQ</field></block>',
+          type: 'menu_item',
+        },
+        {
+          kind: 'block',
+          type: 'urb_component',
+        },
+        {
+          kind: 'block',
+          type: 'urb_floating_button',
+        },
+        {
+          kind: 'block',
+          type: 'urb_list',
+        },
+        {
+          kind: 'block',
+          type: 'urb_add',
+        },
+        {
+          kind: 'block',
+          type: 'setstate',
         },
       ],
     },

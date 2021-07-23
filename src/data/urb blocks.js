@@ -1,5 +1,20 @@
 import Blockly from 'blockly';
 
+Blockly.Blocks['setstate'] = {
+  init: function() {
+    this.appendDummyInput()
+      .appendField('setState')
+      .appendField(new Blockly.FieldTextInput(''), 'field')
+      .appendField(':')
+      .appendField(new Blockly.FieldTextInput(''), 'value');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
 Blockly.Blocks['icon'] = {
   init: function() {
     this.appendDummyInput()
@@ -82,10 +97,12 @@ Blockly.Blocks['urb_floating_button'] = {
 
 Blockly.Blocks['urb_list'] = {
   init: function() {
-    this.appendValueInput('CHILDREN')
+    this.appendValueInput('children')
       .setCheck(null)
       .appendField('list listen')
-      .appendField(new Blockly.FieldCheckbox('TRUE'), 'NAME')
+      .appendField(new Blockly.FieldCheckbox('TRUE'), 'NAME');
+    this.appendStatementInput('onRowClick')
+      .setCheck(null)
       .appendField('onRowClick');
     this.setOutput(true, null);
     this.setColour(230);

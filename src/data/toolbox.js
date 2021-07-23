@@ -1,2 +1,0 @@
-export const toolbox =
-  '<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none"></xml>';

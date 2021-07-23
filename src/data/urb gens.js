@@ -1,5 +1,13 @@
 import Blockly from 'blockly';
 
+Blockly.JavaScript['setstate'] = function(block) {
+  var text_field = block.getFieldValue('field');
+  var text_value = block.getFieldValue('value');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
 Blockly.JavaScript['icon'] = function(block) {
   var text_icon = block.getFieldValue('icon');
   var text_link = block.getFieldValue('link');
