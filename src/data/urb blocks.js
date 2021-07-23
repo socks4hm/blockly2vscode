@@ -17,9 +17,9 @@ Blockly.Blocks['menus_function'] = {
     this.appendDummyInput()
       .appendField('Menus Function')
       .appendField(new Blockly.FieldTextInput('myFunction'), 'function_name');
-    this.appendStatementInput('menu_init')
+    this.appendStatementInput('fields')
       .setCheck(null)
-      .appendField('initialize');
+      .appendField('fields');
     this.appendStatementInput('menus')
       .setCheck(null)
       .appendField('menus');
@@ -88,21 +88,13 @@ Blockly.Blocks['menu'] = {
   },
 };
 
-Blockly.Blocks['menu_item'] = {
+Blockly.Blocks['urb_component'] = {
   init: function() {
     this.appendValueInput('COMPONENT')
       .setCheck('component')
       .appendField('component');
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
-  },
-};
-
-Blockly.Blocks['urb_component'] = {
-  init: function() {
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');

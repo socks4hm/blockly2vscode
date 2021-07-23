@@ -10,34 +10,24 @@ const INITIAL_TOOLBOX_JSON = {
       contents: [
         {
           kind: 'block',
-          blockxml:
-            '<block type="menus_function" id="I3:oj$ZtD9a?.6]I[%Ms" x="-126" y="26"><field name="function_name">myFunction</field><statement name="menu_init"><block type="menu_init_field" id="7btwI~BgIWUJ4W1GD7*_"><field name="field">to do</field><field name="type">string</field><field name="headerName">To do</field><field name="addLabel">To do item</field><field name="width">90</field><next><block type="menu_init_field" id="L,^m(aYnmk*9(0gJy@Mk"><field name="field">completed</field><field name="type">boolean</field><field name="headerName">Completed</field><field name="addLabel">Completed</field><field name="width">0</field></block></next></block></statement><statement name="menus"><block type="menu" id="0lg@@?~3ALUQM6SAO6Z1"><field name="NAME">main</field><field name="PRIMARY">TRUE</field><field name="POSITION">LEFT</field><field name="TITLE">To Dos</field><statement name="CHILDREN"><block type="menu_item" id="qr~Q{h,2/M5[w?;~bF7C"><value name="COMPONENT"><block type="urb_floating_button" id="^(x6@f^IgAkm)~!FWE,P"><value name="NAME"><block type="urb_list" id="K;0PH{wv!6he8$RqPNi)"><field name="NAME">TRUE</field><statement name="onRowClick"><block type="setstate" id="KcQ1Q5mQk-Q|,K{!5L0X"><field name="field">activeMenu</field><field name="value">edit todo</field><next><block type="setstate" id="VsdT|I@YjX@w=2^!#|MW"><field name="field">$key</field><field name="value">item.$key</field></block></next></block></statement></block></value><statement name="ON_CLICK"><block type="setstate" id="3QiJSnO(nJe^A$*UnCjF"><field name="field">activeMenu</field><field name="value">add todo</field></block></statement></block></value></block></statement><next><block type="menu" id="P4mCl@+9wx(Ce`PiNtv#"><field name="NAME">add todo</field><field name="PRIMARY">TRUE</field><field name="POSITION">LEFT</field><field name="TITLE">Add To Do</field><statement name="CHILDREN"><block type="menu_item" id="zlX)oP|IuFf2!KtVMe;}"><value name="COMPONENT"><block type="urb_add" id="!E9WlS#]!1z[w7p{a)9_"></block></value></block></statement><next><block type="menu" id="GDbp{[PHB=}Z7]4pACf`"><field name="NAME">edit todo</field><field name="PRIMARY">TRUE</field><field name="POSITION">LEFT</field><field name="TITLE">Edit To Do</field><statement name="CHILDREN"><block type="menu_item" id="LSiPZmy3sg2.F|TOccV*"><value name="COMPONENT"><block type="urb_set" id="%cL.HbG[%gjiqeo$fx;w"></block></value></block></statement></block></next></block></next></block></statement></block>',
-        },
-        {
-          kind: 'block',
-          blockxml:
-            '<block type="menu" id="Dfgm#^@AWU!kgiMW3g2r" x="23" y="48"><field name="NAME">main</field><field name="PRIMARY">TRUE</field><field name="POSITION">LEFT</field><field name="TITLE">To Do\'s</field><statement name="CHILDREN"><block type="menu_item" id="w18_QG7Qdh;:BUA1/nb("><value name="COMPONENT"><block type="urb_floating_button" id="wg-W]w,+G^p-=UiI$#9u"><value name="NAME"><block type="urb_list" id="/_3C1kbb?!xL1|{TmjrQ"><field name="NAME">TRUE</field><statement name="onRowClick"><block type="setstate" id="oW.(Eov,ZKGGP,M@9J4}"><field name="field">activeMenu</field><field name="value">add todo</field><next><block type="setstate" id="E$|GQ;c}t|-BA]:Z54~@"><field name="field">$key</field><field name="value">item.$key</field></block></next></block></statement></block></value><statement name="ON_CLICK"><block type="setstate" id="bYGpM{:{!q!;RCk:kPMO"><field name="field">activeMenu</field><field name="value">add todo</field></block></statement></block></value></block></statement></block>',
-        },
-        {
-          kind: 'block',
           type: 'menus_function',
         },
         // {
         //   kind: 'block',
-        //   type: 'menu_init_field',
+        //   type: 'fields_field',
         // },
-        // {
-        //   kind: 'block',
-        //   type: 'icon',
-        // },
+        {
+          kind: 'block',
+          type: 'menu_init_field',
+        },
         {
           kind: 'block',
           type: 'menu',
         },
-        {
-          kind: 'block',
-          type: 'menu_item',
-        },
+        // {
+        //   kind: 'block',
+        //   type: 'menu_item',
+        // },
         {
           kind: 'block',
           type: 'urb_component',
