@@ -18,10 +18,10 @@ Blockly.Blocks['menus_function'] = {
       .appendField('Menus Function')
       .appendField(new Blockly.FieldTextInput('myFunction'), 'function_name');
     this.appendStatementInput('fields')
-      .setCheck(null)
+      .setCheck('field')
       .appendField('fields');
     this.appendStatementInput('menus')
-      .setCheck(null)
+      .setCheck('menu')
       .appendField('menus');
     this.setColour(230);
     this.setTooltip('');
@@ -67,22 +67,11 @@ Blockly.Blocks['menu'] = {
       .setCheck(null)
       .appendField('name')
       .appendField(new Blockly.FieldTextInput(''), 'NAME')
-      .appendField('primary')
-      .appendField(new Blockly.FieldCheckbox('TRUE'), 'PRIMARY')
-      .appendField('position')
-      .appendField(
-        new Blockly.FieldDropdown([
-          ['left', 'LEFT'],
-          ['center', 'CENTER'],
-          ['right', 'RIGHT'],
-        ]),
-        'POSITION',
-      )
       .appendField('title')
       .appendField(new Blockly.FieldTextInput(''), 'TITLE');
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, '');
-    this.setColour(230);
+    this.setPreviousStatement(true, 'menu');
+    this.setNextStatement(true, 'menu');
+    this.setColour(120);
     this.setTooltip('');
     this.setHelpUrl('');
   },
@@ -163,9 +152,9 @@ Blockly.Blocks['menu_init_field'] = {
       .appendField(new Blockly.FieldTextInput(''), 'addLabel')
       .appendField('width')
       .appendField(new Blockly.FieldNumber(0, 0), 'width');
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setPreviousStatement(true, 'field');
+    this.setNextStatement(true, 'field');
+    this.setColour(300);
     this.setTooltip('');
     this.setHelpUrl('');
   },

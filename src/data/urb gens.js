@@ -18,15 +18,14 @@ Blockly.JavaScript['menus_function'] = function(block) {
 
 Blockly.JavaScript['menu'] = function(block) {
   var text_name = block.getFieldValue('NAME');
-  var checkbox_primary = block.getFieldValue('PRIMARY') == 'TRUE';
-  var dropdown_position = block.getFieldValue('POSITION');
+  // var checkbox_primary = block.getFieldValue('PRIMARY') == 'TRUE';
+  // var dropdown_position = block.getFieldValue('POSITION');
   var text_title = block.getFieldValue('TITLE');
   var statements_children = Blockly.JavaScript.statementToCode(block, 'CHILDREN');
   // TODO: Assemble JavaScript into code variable.
   var code = `{
     name: "${text_name}",
     title: "${text_title}",
-    primary: ${checkbox_primary}, 
     children: [${statements_children}]
   },\n`;
   return code;
@@ -130,13 +129,6 @@ Blockly.JavaScript['urb_add'] = function(block) {
   var code = `<UrbAdd {...state}/>\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-
-Blockly.JavaScript['menu_init'] = function(block) {
-  var statements_fields = Blockly.JavaScript.statementToCode(block, 'FIELDS');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
 };
 
 Blockly.JavaScript['setstate'] = function(block) {
