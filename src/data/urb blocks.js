@@ -1,5 +1,34 @@
 import Blockly from 'blockly';
 
+Blockly.Blocks['urb_set'] = {
+  init: function() {
+    this.appendValueInput('children')
+      .setCheck(null)
+      .appendField('set');
+    this.setOutput(true, null);
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
+Blockly.Blocks['menus_function'] = {
+  init: function() {
+    this.appendDummyInput()
+      .appendField('Menus Function')
+      .appendField(new Blockly.FieldTextInput('myFunction'), 'function_name');
+    this.appendStatementInput('menu_init')
+      .setCheck(null)
+      .appendField('initialize');
+    this.appendStatementInput('menus')
+      .setCheck(null)
+      .appendField('menus');
+    this.setColour(230);
+    this.setTooltip('');
+    this.setHelpUrl('');
+  },
+};
+
 Blockly.Blocks['setstate'] = {
   init: function() {
     this.appendDummyInput()
@@ -117,19 +146,6 @@ Blockly.Blocks['urb_add'] = {
       .setCheck(null)
       .appendField('add');
     this.setOutput(true, null);
-    this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
-  },
-};
-
-Blockly.Blocks['menu_init'] = {
-  init: function() {
-    this.appendStatementInput('FIELDS')
-      .setCheck(null)
-      .appendField('fields');
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
     this.setColour(230);
     this.setTooltip('');
     this.setHelpUrl('');

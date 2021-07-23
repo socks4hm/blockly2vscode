@@ -1,103 +1,134 @@
 import Blockly from 'blockly';
 
-Blockly.JavaScript['setstate'] = function(block) {
-  var text_field = block.getFieldValue('field');
-  var text_value = block.getFieldValue('value');
+Blockly.JavaScript['urb_set'] = function(block) {
+  var obj = {};
+  obj.value_children = Blockly.JavaScript.valueToCode(
+    block,
+    'children',
+    Blockly.JavaScript.ORDER_ATOMIC,
+  );
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = JSON.stringify(obj);
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['menus_function'] = function(block) {
+  var text_function_name = block.getFieldValue('function_name');
+  var statements_menu_init = Blockly.JavaScript.statementToCode(block, 'menu_init');
+  var statements_menus = Blockly.JavaScript.statementToCode(block, 'menus');
+  // TODO: Assemble JavaScript into code variable.
+  var code =
+    '{"function_definition":{"name":"' +
+    text_function_name +
+    '", "init":[' +
+    statements_menu_init +
+    '], "menus":[' +
+    statements_menus +
+    ']}}';
+  return code;
+};
+
+Blockly.JavaScript['setstate'] = function(block) {
+  var obj = {};
+  obj.text_field = block.getFieldValue('field');
+  obj.text_value = block.getFieldValue('value');
+  // TODO: Assemble JavaScript into code variable.
+  var code = JSON.stringify(obj);
   return code;
 };
 
 Blockly.JavaScript['icon'] = function(block) {
-  var text_icon = block.getFieldValue('icon');
-  var text_link = block.getFieldValue('link');
-  var value_dropdonmenus = Blockly.JavaScript.valueToCode(
+  var obj = {};
+  obj.text_icon = block.getFieldValue('icon');
+  obj.text_link = block.getFieldValue('link');
+  obj.value_dropdonmenus = Blockly.JavaScript.valueToCode(
     block,
     'dropdonMenus',
     Blockly.JavaScript.ORDER_ATOMIC,
   );
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = JSON.stringify(obj);
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['menu'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  var checkbox_primary = block.getFieldValue('PRIMARY') == 'TRUE';
-  var dropdown_position = block.getFieldValue('POSITION');
-  var text_title = block.getFieldValue('TITLE');
-  var statements_children = Blockly.JavaScript.statementToCode(block, 'CHILDREN');
+  var obj = {};
+  obj.text_name = block.getFieldValue('NAME');
+  obj.checkbox_primary = block.getFieldValue('PRIMARY') == 'TRUE';
+  obj.dropdown_position = block.getFieldValue('POSITION');
+  obj.text_title = block.getFieldValue('TITLE');
+  obj.statements_children = Blockly.JavaScript.statementToCode(block, 'CHILDREN');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = JSON.stringify(obj);
   return code;
 };
 
 Blockly.JavaScript['menu_item'] = function(block) {
-  var value_component = Blockly.JavaScript.valueToCode(
+  var obj = {};
+  obj.value_component = Blockly.JavaScript.valueToCode(
     block,
     'COMPONENT',
     Blockly.JavaScript.ORDER_ATOMIC,
   );
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = JSON.stringify(obj);
   return code;
 };
 
 Blockly.JavaScript['urb_component'] = function(block) {
+  var obj = {};
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = JSON.stringify(obj);
   return code;
 };
 
 Blockly.JavaScript['urb_floating_button'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_on_click = Blockly.JavaScript.statementToCode(block, 'ON_CLICK');
+  var obj = {};
+  obj.value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  obj.statements_on_click = Blockly.JavaScript.statementToCode(block, 'ON_CLICK');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = JSON.stringify(obj);
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['urb_list'] = function(block) {
-  var checkbox_name = block.getFieldValue('NAME') == 'TRUE';
-  var value_children = Blockly.JavaScript.valueToCode(
+  var obj = {};
+  obj.checkbox_name = block.getFieldValue('NAME') == 'TRUE';
+  obj.value_children = Blockly.JavaScript.valueToCode(
     block,
     'CHILDREN',
     Blockly.JavaScript.ORDER_ATOMIC,
   );
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = JSON.stringify(obj);
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['urb_add'] = function(block) {
-  var value_children = Blockly.JavaScript.valueToCode(
+  var obj = {};
+  obj.value_children = Blockly.JavaScript.valueToCode(
     block,
     'CHILDREN',
     Blockly.JavaScript.ORDER_ATOMIC,
   );
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = JSON.stringify(obj);
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['menu_init'] = function(block) {
-  var statements_fields = Blockly.JavaScript.statementToCode(block, 'FIELDS');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
-};
-
 Blockly.JavaScript['menu_init_field'] = function(block) {
-  var text_field = block.getFieldValue('field');
-  var dropdown_type = block.getFieldValue('type');
-  var text_headername = block.getFieldValue('headerName');
-  var text_addlabel = block.getFieldValue('addLabel');
-  var number_width = block.getFieldValue('width');
+  var obj = {};
+  obj.field_name = block.getFieldValue('field');
+  obj.dropdown_type = block.getFieldValue('type');
+  obj.text_headername = block.getFieldValue('headerName');
+  obj.text_addlabel = block.getFieldValue('addLabel');
+  obj.number_width = block.getFieldValue('width');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = JSON.stringify(obj) + ',';
   return code;
 };

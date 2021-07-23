@@ -34,7 +34,7 @@ export default function BlocklyTest() {
     <div className="blockly-blockly-test fit vertical layout">
       <div>blockly test</div>
       <div className="flex" ref={blocklyRef} />
-      <div className="horizontal layout" style={{ height: '20%' }}>
+      <div className="horizontal layout full-width" style={{ height: '20%' }}>
         <div id="code" className="flex">
           {code}
         </div>
