@@ -28,7 +28,7 @@ export default function BlocklyTest() {
   // eslint-disable-next-line no-undef
   //  Blockly.JavaScript.workspaceToCode(workspace);
   return (
-    <div className="home-blockly-test fit vertical layout">
+    <div className="blockly-blockly-test fit vertical layout">
       <div>blockly test</div>
       <div className="flex" ref={blocklyRef} />
       <div className="horizontal layout" style={{ height: '20%' }}>

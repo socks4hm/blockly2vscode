@@ -4,5 +4,5 @@ import { BlocklyTest } from '../../../src/features/home';
 
 it('renders node with correct class name', () => {
   const renderedComponent = shallow(<BlocklyTest />);
-  expect(renderedComponent.find('.home-blockly-test').length).toBe(1);
+  expect(renderedComponent.find('.blockly-blockly-test').length).toBe(1);
 });
