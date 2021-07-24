@@ -21,7 +21,6 @@ export default function HoverComponents({ component, hoverComponent,show,  trans
         onMouseLeave= {e => setIsHover(false)}
         style={{
           mouseEvents: isHover ? 'all' : 'none',
-          // display: isHover ? 'block' : 'none',
           opacity: isHover ? 1 : 0,
           position: 'fixed',
           left: position.left,
