@@ -6,7 +6,19 @@ export default function WelcomePage() {
   return (
     <div className="home-welcome-page">
       <header className="app-header">
-        <img src={require('../../images/rekit-react.png')} className="rekit-logo" alt="logo" />
+        <HoverComponents
+          show
+          component={
+            <img src={require('../../images/rekit-react.png')} className="rekit-logo" alt="logo" />
+          }
+          hoverComponent={
+            <div className="vertical layout fill" style={{ backgroundColor: 'red' }}>
+              <div>top</div>
+              <div className="flex" />
+              <div>bottom</div>
+            </div>
+          }
+        />
         <h1 className="app-title">Welcome to Rekit React</h1>
       </header>
       <div className="app-intro">
