@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HoverComponents from '../common/HoverComponents';
 
 export default function WelcomePage() {
   return (
@@ -11,9 +12,20 @@ export default function WelcomePage() {
       <div className="app-intro">
         <h3>To get started:</h3>
         <ul>
-          <li>
-            Edit component <code>src/features/home/WelcomePage.js</code> for this page.
-          </li>
+          <HoverComponents
+            component={
+              <li>
+                Edit component <code>src/features/home/WelcomePage.js</code> for this page.
+              </li>
+            }
+            hoverComponent={
+              <div className="horizontal layout" style={{ backgroundColor: 'red' }}>
+                <div>left</div>
+                <div className="flex" />
+                <div>right</div>
+              </div>
+            }
+          />
           <li>
             Edit component <code>src/features/home/App.js</code> for the root container layout.
           </li>
